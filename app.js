@@ -107,13 +107,25 @@ app.post("/api/households/:id", function (req, res) {
               guests[0].save();
             });
           });
-          const mailOptions = {
+          
+          generateMail({
             from: 'nick@iamnickvolpe.com',
             to: 'nick@iamnickvolpe.com',
             subject: 'jennandnick.nyc RSVP: ' + req.body.addressee,
             html: "<ul>" + guestsHtml + "</ul>" + "<p>" + req.body.notes + "</p>"
-          };
-          transporter.sendMail(mailOptions);
+          });
+
+          req.body.guests.map(function(guest) {
+            if (guest.attending === "TRUE") {
+              generateMail({
+                from: 'nick@iamnickvolpe.com',
+                to: guest.email,
+                subject: 'J+N Wedding: Yaaaaaaay!',
+                html: "<p>Hey " + guest.name + "!</p>" + "<p>We're so happy to have you at our wedding! If you have any questions or if anything changes, don't hesitate to reach out.</p><p>Jenn + Nick</p>"
+              });
+            }
+          });
+
           res.send({ success: "Updated successfully" });
         } else {
           res.json({ error: 'Invalid credentials.' });
@@ -126,6 +138,16 @@ app.post("/api/households/:id", function (req, res) {
     });
   });
 });
+
+function generateMail(options) {
+  var mailOptions = {
+    from: options.from,
+    to: options.to,
+    subject: options.subject,
+    html: options.html
+  };
+  transporter.sendMail(mailOptions);
+}
 
 function returnStatus(attending) {
   if (attending === "TRUE") {
