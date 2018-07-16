@@ -42,14 +42,14 @@ app.get("/api/households/:id", function (req, res) {
   var response = {};
 
   doc.useServiceAccountAuth(creds, function () {
-    doc.getRows("ou9fq32", { "query": "id = " + req.params.id }, function (err, households) {
+    doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
       if (households[0] && req.query.code == households[0].code) {
         response.addressee = households[0].addressee;
         response.notes = households[0].notes;
         response.updated = households[0].updated;
         response.message = households[0].message;
 
-        doc.getRows("oioboq", { "query": "household = " + req.params.id + " and list = A and adult = TRUE" }, function (err, guests) {
+        doc.getRows(process.env.SHEET_GUESTS, { "query": "household = " + req.params.id + " and list = A and adult = TRUE" }, function (err, guests) {
           response.guests = [];
           guests.map(function (guest) {
             response.guests.push({
@@ -73,7 +73,7 @@ app.get("/api/households/:id", function (req, res) {
 app.post("/api/households/:id", function (req, res) {
   // Query Parameters: code
   doc.useServiceAccountAuth(creds, function () {
-    doc.getRows("ou9fq32", { "query": "id = " + req.params.id }, function (err, households) {
+    doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
       if (households[0] && req.query.code == households[0].code) {
 
         var invalidEntries = [];
@@ -100,7 +100,7 @@ app.post("/api/households/:id", function (req, res) {
           var guestsHtml = "";
           req.body.guests.map(function (guest) {
             guestsHtml = guestsHtml + "<li>" + guest.name + ": " + returnStatus(guest.attending) + " | " + guest.email + "</li>";
-            doc.getRows("oioboq", { "query": "id = " + guest.id }, function (err, guests) {
+            doc.getRows(process.env.SHEET_GUESTS, { "query": "id = " + guest.id }, function (err, guests) {
               guests[0].attending = guest.attending;
               guests[0].email = guest.email;
               guests[0].updated = new Date();
