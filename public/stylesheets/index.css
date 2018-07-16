@@ -625,7 +625,7 @@ iframe {
 .switch-field input:checked + label:last-of-type {
     background-color: #777a7b;
 }
-  
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 900px) {

@@ -43,7 +43,7 @@ app.get("/api/households/:id", function (req, res) {
 
   doc.useServiceAccountAuth(creds, function () {
     doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
-      if (households[0] && req.query.code == households[0].code) {
+      if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
         response.addressee = households[0].addressee;
         response.notes = households[0].notes;
         response.updated = households[0].updated;
@@ -74,7 +74,7 @@ app.post("/api/households/:id", function (req, res) {
   // Query Parameters: code
   doc.useServiceAccountAuth(creds, function () {
     doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
-      if (households[0] && req.query.code == households[0].code) {
+      if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
 
         var invalidEntries = [];
 
@@ -110,13 +110,13 @@ app.post("/api/households/:id", function (req, res) {
           
           generateMail({
             from: 'nick@iamnickvolpe.com',
-            to: 'nick@iamnickvolpe.com',
+            to: ['nick@iamnickvolpe.com', 'jenn.sager@gmail.com'],
             subject: 'jennandnick.nyc RSVP: ' + req.body.addressee,
             html: "<ul>" + guestsHtml + "</ul>" + "<p>" + req.body.notes + "</p>"
           });
 
           req.body.guests.map(function(guest) {
-            if (guest.attending === "TRUE") {
+            if (guest.attending === "TRUE" && guest.email) {
               generateMail({
                 from: 'nick@iamnickvolpe.com',
                 to: guest.email,

@@ -247,11 +247,8 @@
                                 <h3>{{guest.name}}</h3>
                                 <div>
                                     <div class="switch-field">
-                                        <input name="attending_{{$index}}" id="accept_{{$index}}" type="radio" ng-model="guest.attending" ng-required="true" value="TRUE">
-                                        <label for="accept_{{$index}}">Accept</label>
-                                        <input name="attending_{{$index}}" id="decline_{{$index}}" type="radio"
-                                            ng-model="guest.attending" ng-required="true" value="FALSE">
-                                        <label for="decline_{{$index}}">Decline</label>
+                                        <input name="attending_{{$index}}" id="accept_{{$index}}" type="radio" ng-model="guest.attending" ng-required="true" value="TRUE"><label for="accept_{{$index}}">Accept</label><input name="attending_{{$index}}" id="decline_{{$index}}" type="radio"
+                                            ng-model="guest.attending" ng-required="true" value="FALSE"><label for="decline_{{$index}}">Decline</label>
                                     </div>
 
                                     <p class="small error" ng-if="rsvp['attending_' + $index].$invalid && rsvp.$submitted">Please accept or decline.</p>
