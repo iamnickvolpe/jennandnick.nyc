@@ -1,0 +1,326 @@
+<!doctype html>
+<html ng-app="myApp" class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>J+N Wedding</title>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="javascripts/index.js"></script>
+    <link href="stylesheets/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+</head>
+
+<body ng-controller="myController">
+    <header class="header">
+        <div class="header__wrapper">
+            <div class="header__wrapper-people"></div>
+        </div>
+        <div class="header__main-content">
+            <h1 class="header__heading">Finally!</h1>
+            <a href="#rsvp" ng-click="scrollToRsvp()" class="header__button">RSVP</a>
+            <p id="date" class="header__date"></p>
+        </div>
+    </header>
+
+    <section class="opening">
+        <div class="center-wrapper">
+            <h1>We've Been Through a Lot Together*</h1>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat__icon">
+                        <img src="images/train.png" />
+                    </div>
+                    <p>
+                        <span class="x-large stat__number">6,235</span>
+                        <span class="small stat__description">delayed G-train rides</span>
+                    </p>
+                </div>
+                <div class="stat">
+                    <div class="stat__icon">
+                        <img src="images/pizza.png" />
+                    </div>
+                    <p>
+                        <span class="x-large stat__number">282</span>
+                        <span class="small stat__description">shameful slices of pizza</span>
+                    </p>
+                </div>
+                <div class="stat">
+                    <div class="stat__icon">
+                        <img src="images/coffee.png" />
+                    </div>
+                    <p>
+                        <span class="x-large stat__number">3,237</span>
+                        <span class="small stat__description">bougie cups of coffee</span>
+                    </p>
+                </div>
+            </div>
+            <p>Jenn and Nick have spent the last 8 years falling in love while making their mark on the greatest city in the
+                world 🗽 in a little town called Brooklyn.
+            </p>
+            <p>Just how did a computer nerd 🤓 from Jersey end up with such a lovely and talented artist 👩🏻‍🎨 from the Big
+                Apple? Well, not only was it a mutual friend who made the initial connection, it's their friends and family
+                who continue to play an integral part in strengthening the bonds that have held them together thus far.</p>
+            <p>So with $4.00 coffees in hand and their loved ones by their side (and Muffin 🐈 of course), they're not only
+                ready to take the next step, they're ready to take on anything.</p>
+
+            <p class="small opening__disclaimer">*Stats may not be real #fakenews.</p>
+        </div>
+    </section>
+
+    <section class="details">
+        <div class="center-wrapper">
+            <h1>So We’re Making it Official</h1>
+            <div class="basics">
+                <div class="basic">
+                    <p class="x-large basic__title">The Dumbo Loft</p>
+                    <p class="large">155 Water St. Brooklyn, New York</p>
+                    <p>
+                        <a target="_blank" href="https://www.google.com/maps/place/The+Dumbo+Loft/@40.7033093,-73.9900179,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a36b2b59a49:0x713f70896d200ac7!8m2!3d40.7033093!4d-73.9878239"
+                            class="basic__cta">
+                            <i class="fas fa-location-arrow"></i> Get directions</a>
+                    </p>
+                </div>
+                <div class="basic">
+                    <p class="x-large basic__title">October 27, 2018</p>
+                    <p class="large">5:00pm - 12:00am</p>
+                    <p>
+                        <a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&tmeid=N2phaHF2NDZnZzZlbTgzbXFuOXE1M2drZTYgbmlja0BpYW1uaWNrdm9scGUuY29t&tmsrc=nick%40iamnickvolpe.com"
+                            class="basic__cta">
+                            <i class="fas fa-calendar-alt"></i> Mark your calendar</a>
+                    </p>
+                </div>
+            </div>
+            <div class="section">
+                <p>A party in a Brooklyn 🧔🚲 loft with lots of 🍗🍖 (and some 🥕🥒), a swing band 🎙️🎷, and plenty of 🍻🍷🍹
+                    to go around? Come join Jenn and Nick, along with their family and friends to celebrate their exciting
+                    new chapter.</p>
+            </div>
+            <div class="specifics">
+                <div class="specific">
+                    <h2 class="specific__heading">Transportation</h2>
+                    <p class="small">We strongly recommend public transportation (subway, Uber/Lyft, yellow cabs), but if you must drive there
+                        are a few nearby parking garages.</p>
+                </div>
+                <div class="specific">
+                    <h2 class="specific__heading">Dress Code</h2>
+                    <p class="small">There is no strict dress code by any means. But it won't kill ya to put on something nice!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brooklyn">
+        <div class="center-wrapper">
+            <h1>In Our Favorite Place in the World</h1>
+
+            <div class="sub-section">
+                <div class="sub-section">
+                    <h2>Nearby Accomodations</h2>
+                    <p>There are a handful of hotels right near the venue, but there is an abundance of places to stay with
+                        plenty of transporation options all across the city. Don’t hesitate to contact us for help.</p>
+                </div>
+
+                <div class="suggestions">
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/The+Tillary+Hotel+Brooklyn/@40.6964493,-73.9865545,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a3560b36099:0x72c5470a3f065f30!8m2!3d40.6964453!4d-73.9843605">The Tillary Hotel Brooklyn</a>
+                        </h3>
+                        <p class="small">A boutique hotel that's a 13 minute walk from Dumbo loft. Jenn and Nick are staying here.</p>
+                    </div>
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/1+Hotel+Brooklyn+Bridge/@40.7017018,-73.9979721,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a39ee957823:0x55e7fa4812618518!8m2!3d40.7016978!4d-73.9957781">1 Hotel Brooklyn Bridge</a>
+                        </h3>
+                        <p class="small">For those who want to splurge. Amazing views and a few blocks away from The Dumbo Loft.</p>
+                    </div>
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/Holiday+Inn+Brooklyn+Downtown/@40.6873597,-73.9847486,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25bb2cbff2399:0xf112fc212ef33f46!8m2!3d40.6873557!4d-73.9825546">Holiday Inn Brooklyn/Downtown</a>
+                        </h3>
+                        <p class="small">A little farther away, but near some great restaurants and the Brooklyn Academy of Music (BAM).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-section">
+                <div class="sub-section">
+                    <h2>Local Eats</h2>
+                    <p>If you really want to go to the Hard Rock Cafe in Times Square, we won’t stop you. But you’ll be ignoring
+                        some of the most amazing restaurants and bars on the planet. Here are just a few of our favorites.</p>
+                </div>
+
+                <div class="suggestions">
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/GRAN+EL%C3%89CTRICA/@40.702667,-73.993116,15z/data=!4m2!3m1!1s0x0:0xaeec6117b5b20415?sa=X&ved=0ahUKEwi1kJDlmM3ZAhVmplkKHbb8BR4Q_BIIiAEwCg">GRAN ELÉCTRICA</a>
+                        </h3>
+                        <p class="small">Jenn and Nick's favorite Mexican restaurant right in Dumbo</p>
+                    </div>
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/Grimaldi's+Pizza/@40.702608,-73.9954137,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25a30c9da3783:0x8d7f4ba817ec34f6!8m2!3d40.702604!4d-73.9932197">Grimaldi's Pizza</a>
+                        </h3>
+                        <p class="small">No takeout and no slices but the damn best pizza in the area.</p>
+                    </div>
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/Fette+Sau/@40.713887,-73.958668,17z/data=!3m1!4b1!4m5!3m4!1s0x89c2595f0064ede7:0x9f203ffd6fec2fc7!8m2!3d40.713883!4d-73.956474">Fette Sau (Williamsburg)</a>
+                        </h3>
+                        <p class="small">Ridiculously good BBQ.</p>
+                    </div>
+                </div>
+
+                <div class="suggestions">
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/OddFellows+Ice+Cream+Co./@40.7181351,-73.9660384,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25966c982b585:0x3ff404e0f9fb1690!8m2!3d40.7181311!4d-73.9638444">OddFellows Ice Cream Co. (Williamsburg)</a>
+                        </h3>
+                        <p class="small">Jenn and Nick’s favorite Brooklyn ice cream shop.</p>
+                    </div>
+                    <div class="suggestion">
+                        <h3>
+                            <a target="_blank" href="https://www.google.com/maps/place/Luke's+Lobster/@40.721225,-73.9939382,13.35z/data=!4m8!1m2!2m1!1slukes+lobster!3m4!1s0x0:0x84d59b6a18894604!8m2!3d40.7034807!4d-73.994143">Luke’s Lobster</a>
+                        </h3>
+                        <p class="small">Awesome lobster rolls and great for a quick bite.</p>
+                    </div>
+                </div>
+            </div>
+
+            <iframe id="map" src="https://www.google.com/maps/d/embed?mid=1jNhOnDiazvj63N2Ogy20swtP91rq8NdT" width="100%" height="400"></iframe>
+        </div>
+    </section>
+
+    <section id="rsvp" class="rsvp">
+        <div class="center-wrapper">
+            <div class="rsvp__card">
+                <h1 class="rsvp__heading">RSVP</h1>
+
+
+
+                <div ng-if="formState==='initial'" class="initial-form">
+                    <p>Please find your household and code included with your inviation. If you need help, please don't hesitate
+                        to
+                        <a href="mailto:nick@iamnickvolpe.com">contact us</a>.</p>
+                    <form ng-submit="initial.$valid && doFindInvitation(true)" name="initial" novalidate>
+                        <div class="input-block">
+                            <label for="household">Household</label>
+                            <input type="text" required="" id="household" ng-model="currentSubmission.household">
+                        </div>
+                        <div class="input-block">
+                            <label for="code">Code</label>
+                            <input type="text" required="" id="code" ng-model="currentSubmission.code">
+                        </div>
+                        <div class="submit-block">
+                            <input ng-disabled="submitted" value="Find Your Invitation" type="submit">
+                        </div>
+                        <div ng-if="invalidCredentials" class="invalid-credentials">
+                            <i class="error-icon fas fa-exclamation-triangle"></i>
+                            <p class="small">We couldn't find your invitation. Please double check your credentials and try again.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div ng-if="formState==='rsvp'" class="rsvp-form">
+                    <p>Please rspond for each member of your party. Dinner will be a variety of dishes served family-style,
+                        but we will do our best to accomodate specific needs. Your email address will help us keep you in-the-know
+                        and will not be shared.</p>
+                    <div class="rsvp-form__heading">
+                        <h2>{{currentSubmission.body.addressee}}</h2>
+                        <p ng-if="currentSubmission.body.message" class="personalized-message small">{{currentSubmission.body.message}}</p>
+                    </div>
+
+                    <form ng-submit="rsvp.$valid && doRsvp()" name="rsvp" novalidate>
+                        <div class="guests">
+                            <div class="row row--header">
+                                <div></div>
+                                <p class="small">Response (required)</p>
+                                <p class="small">Email</p>
+                            </div>
+
+                            <div class="guest row" ng-repeat="guest in currentSubmission.body.guests">
+                                <h3>{{guest.name}}</h3>
+                                <div>
+                                    <div class="switch-field">
+                                        <input name="attending_{{$index}}" id="accept_{{$index}}" type="radio" ng-model="guest.attending" ng-required="true" value="TRUE">
+                                        <label for="accept_{{$index}}">Accept</label>
+                                        <input name="attending_{{$index}}" id="decline_{{$index}}" type="radio"
+                                            ng-model="guest.attending" ng-required="true" value="FALSE">
+                                        <label for="decline_{{$index}}">Decline</label>
+                                    </div>
+
+                                    <p class="small error" ng-if="rsvp['attending_' + $index].$invalid && rsvp.$submitted">Please accept or decline.</p>
+                                </div>
+                                <div>
+                                    <label for="email_{{$index}}">Email</label>
+                                    <input my-validate ng-model-options="{ debounce: 300 }" ng-max-length="256" type="email" id="email_{{$index}}" name="email_{{$index}}"
+                                        ng-required="false" ng-model="guest.email">
+                                    <p class="small error" ng-if="rsvp['email_' + $index].$invalid && rsvp.$submitted">Please enter a valid email address.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-block">
+                            <label for="notes">Notes (dietary restrictions, etc.)</label>
+                            <textarea my-validate ng-model-options="{ debounce: 300 }" ng-max-length="2000" id="notes" name="notes" ng-model="currentSubmission.body.notes"></textarea>
+                            <p class="small error" ng-if="rsvp.notes.$invalid && rsvp.$submitted">Note cannot be more than 2000 characters or contain certain special characters.</p>
+                        </div>
+                        <div class="submit-block">
+                            <input ng-disabled="submitted" value="Submit Response" type="submit">
+                            <i ng-if="rsvp.$invalid && rsvp.$submitted" class="error-icon fas fa-exclamation-triangle"></i>
+                        </div>
+                    </form>
+                </div>
+
+                <div ng-if="formState==='finished' && howManyAttending==='all'" class="finished-form">
+                    <img src="images/yes.gif">
+                    <h2>Yesssssss!</h2>
+                    <p class="small">We're so excited to see you there! If anything changes, please don't hesitate to
+                        <a href="mailto:nick@iamnickvolpe.com">contact us</a>.
+                    </p>
+                </div>
+
+                <div ng-if="formState==='finished' && howManyAttending==='some'" class="finished-form">
+                    <img src="images/yes.gif">
+                    <h2>Yesssssss!</h2>
+                    <p class="small">We're so excited to see you there! We're sad to see that some couldn't make it but we totally understand.
+                        If anything changes, please don't hesitate to
+                        <a href="mailto:nick@iamnickvolpe.com">contact us</a>.
+                    </p>
+                </div>
+
+                <div ng-if="formState==='finished' && howManyAttending==='none'" class="finished-form">
+                    <img src="images/no.gif">
+                    <h2>*Unintelligible Sobbing*</h2>
+                    <p class="small">We're really sad you can't make it but we totally understand. If anything changes, please don't hesitate
+                        to
+                        <a href="mailto:nick@iamnickvolpe.com">contact us</a>.
+                    </p>
+                </div>
+
+                <div ng-if="formState==='alreadySubmitted'" class="already-submitted">
+                    <img src="images/already.gif">
+                    <h2>Already RSVP'd</h2>
+                    <p class="small">It appears you've already RSVP'd. If you believe this is an error or would like to change something,
+                        please don't hesitate to
+                        <a href="mailto:nick@iamnickvolpe.com">contact us</a>.
+                    </p>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+        </div>
+    </section>
+</body>
+
+</html>
