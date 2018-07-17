@@ -174,7 +174,7 @@ p {
     line-height: 2.2em;
     font-size: 1.1em;
     font-weight: 500;
-    margin-bottom: 2em;
+    margin-bottom: 2.4em;
     color: #547488;
     overflow-wrap: break-word;
 }
@@ -258,6 +258,7 @@ p:last-child {
     font-size: .9em;
     font-weight: 500;
     line-height: 2em;
+    margin-bottom: 1.4em;
 }
 
 .large {
@@ -634,6 +635,12 @@ iframe {
 
 .switch-field input:checked + label:last-of-type {
     background-color: #777a7b;
+}
+
+.personalized-message {
+    padding: .5rem 1rem;
+    box-shadow: 8px 8px #ced6db;
+    background-color: #f1f1f1;
 }
 
 /* MEDIA QUERIES */

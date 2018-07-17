@@ -230,11 +230,11 @@
                 </div>
 
                 <div ng-if="formState==='rsvp'" class="rsvp-form">
-                    <p>Please rspond for each member of your party. Dinner will be a variety of dishes served family-style,
+                    <p>Please respond for each member of your party. Dinner will be a variety of dishes served family-style,
                         but we will do our best to accomodate specific needs. Your email address will help us keep you in-the-know
                         and will not be shared.</p>
                     <div class="rsvp-form__heading">
-                        <h2>{{currentSubmission.body.addressee}}</h2>
+                        <h2>Invitation for: {{currentSubmission.body.addressee}}</h2>
                         <p ng-if="currentSubmission.body.message" class="personalized-message small">{{currentSubmission.body.message}}</p>
                     </div>
 
