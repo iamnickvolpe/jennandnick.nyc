@@ -588,6 +588,7 @@ iframe {
 .finished-form img,
 .already-submitted img {
     margin-bottom: 1rem;
+    max-width: 100%;
 }
 
 .switch-field {
