@@ -126,9 +126,9 @@ app.post("/api/households/:id", function (req, res) {
             }
           });
 
-          res.send({ success: "Updated successfully" });
+          res.send({ success: "Updated successfully." });
         } else {
-          res.json({ error: 'Invalid credentials.' });
+          res.json({ error: 'Invalid entries.' });
         }
 
 
