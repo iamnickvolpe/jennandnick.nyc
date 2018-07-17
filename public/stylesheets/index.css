@@ -157,7 +157,7 @@ h2 {
     font-size: 1.6em;
     font-weight: bold;
     line-height: 1.2em;
-    margin-bottom: .4em;
+    margin-bottom: .6em;
     text-transform: uppercase;
     color: #447392;
 }
@@ -389,6 +389,7 @@ iframe {
 
 .stat__number {
     display: block;
+    color: #FC6861;
 }
 
 .stat__icon img {
@@ -637,10 +638,12 @@ iframe {
     background-color: #777a7b;
 }
 
-.personalized-message {
-    padding: .5rem 1rem;
-    box-shadow: 8px 8px #ced6db;
-    background-color: #f1f1f1;
+.invitation-head {
+    line-height: 2.2em;
+    font-size: .9em;
+    font-weight: 500;
+    color: #547488;
+    overflow-wrap: break-word;
 }
 
 /* MEDIA QUERIES */
