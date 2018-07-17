@@ -202,7 +202,6 @@ textarea {
     line-height: 1.4em;
 }
 
-button,
 input[type=button],
 input[type=submit] {
     background-color: #FC6861;
@@ -221,6 +220,14 @@ input[type=submit] {
 .ng-submitted textarea.ng-invalid:not(.typing),
 .ng-submitted select.ng-invalid:not(.typing) {
     border-color: #f3362c;
+}
+
+input,
+textarea,
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .error {
@@ -758,6 +765,9 @@ iframe {
     }
     .stat__icon img {
         width: 60%;
+    }
+    .rsvp .center-wrapper {
+        padding: 1.4em;
     }
 }
 
