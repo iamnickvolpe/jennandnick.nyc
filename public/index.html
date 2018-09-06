@@ -207,7 +207,7 @@
 
 
                 <div ng-if="formState==='initial'" class="initial-form">
-                    <p>Please find your household and code included with your inviation. If you need help, please don't hesitate
+                    <p>Please find your <b>household</b> and <b>secret code</b> included with your inviation. If you need help, please don't hesitate
                         to
                         <a href="mailto:nick@iamnickvolpe.com">contact us</a>.</p>
                     <form ng-submit="initial.$valid && doFindInvitation(true)" name="initial" novalidate>
@@ -216,7 +216,7 @@
                             <input type="text" required="" id="household" ng-model="currentSubmission.household">
                         </div>
                         <div class="input-block">
-                            <label for="code">Code</label>
+                            <label for="code">Secret Code</label>
                             <input type="text" required="" id="code" ng-model="currentSubmission.code">
                         </div>
                         <div class="submit-block">
