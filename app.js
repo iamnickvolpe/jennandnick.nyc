@@ -120,8 +120,8 @@ app.post("/api/households/:id", function (req, res) {
               generateMail({
                 from: 'nick@iamnickvolpe.com',
                 to: guest.email,
-                subject: 'J+N Wedding: Yaaaaaaay!',
-                html: "<p>Hey " + guest.name + "!</p>" + "<p>We're so happy to have you at our wedding! If you have any questions or if anything changes, don't hesitate to reach out.</p><p>Jenn + Nick</p>"
+                subject: 'J+N Wedding RSVP Confirmation - Yaaaaaaay!',
+                html: "<p>Hey " + guest.name + "!</p>" + "<p>We're so happy to have you at our wedding! If you have any questions or if anything changes, don't hesitate to reach out.</p><p>More information can be found on our website <a href='https://www.jennandnick.nyc'>www.jennandnick.nyc</a>.</p><p>Jenn & Nick</p>"
               });
             }
           });
