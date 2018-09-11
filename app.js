@@ -43,17 +43,21 @@ app.get("/api/households/:id", function (req, res) {
 
   doc.useServiceAccountAuth(creds, function () {
     doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
-      if (err) {
+      if (err || !households.length || !req.query.code) {
         res.json({ error: 'Invalid credentials.' });
         return;
       }
-      if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
+      if (req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
         response.addressee = households[0].addressee;
         response.notes = households[0].notes;
         response.updated = households[0].updated;
         response.message = households[0].message;
 
         doc.getRows(process.env.SHEET_GUESTS, { "query": "household = " + req.params.id + " and list = A and adult = TRUE" }, function (err, guests) {
+          if (err) {
+            res.json({ error: 'Invalid credentials.' });
+            return;
+          }
           response.guests = [];
           guests.map(function (guest) {
             response.guests.push({
@@ -78,12 +82,13 @@ app.post("/api/households/:id", function (req, res) {
   // Query Parameters: code
   doc.useServiceAccountAuth(creds, function () {
     doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
-      if (err) {
+      if (err || !households.length || !req.query.code) {
         res.json({ error: 'Invalid credentials.' });
         return;
       }
 
-      if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
+      if (req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
+
         var invalidEntries = [];
 
         req.body.guests.map(function (guest) {
