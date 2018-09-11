@@ -121,7 +121,7 @@ app.post("/api/households/:id", function (req, res) {
                 from: 'nick@iamnickvolpe.com',
                 to: guest.email,
                 subject: 'J+N Wedding RSVP Confirmation - Yaaaaaaay!',
-                html: "<p>Hey " + guest.name + "!</p>" + "<p>We're so happy to have you at our wedding! If you have any questions or if anything changes, don't hesitate to reach out.</p><p>More information can be found on our website <a href='https://www.jennandnick.nyc'>www.jennandnick.nyc</a>.</p><p>Jenn & Nick</p>"
+                html: "<p>Hey " + guest.name + "!</p>" + "<p>We're so happy to have you at our wedding! As a friendly reminder, the ceremony and reception will be held at:</p><p><strong>The Dumbo Loft: 155 Water St, Brooklyn, NY 11201</strong><br>Saturday, October 27th at 5:00pm</p><p>If you have any questions or if anything changes, don't hesitate to reach out.</p><p>More information can be found on our website <a href='https://www.jennandnick.nyc'>www.jennandnick.nyc</a>.</p><p>&#60;3 Jenn & Nick</p>"
               });
             }
           });
