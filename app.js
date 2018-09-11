@@ -43,6 +43,10 @@ app.get("/api/households/:id", function (req, res) {
 
   doc.useServiceAccountAuth(creds, function () {
     doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
+      if (err) {
+        res.json({ error: 'Invalid credentials.' });
+        return;
+      }
       if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
         response.addressee = households[0].addressee;
         response.notes = households[0].notes;
@@ -74,8 +78,12 @@ app.post("/api/households/:id", function (req, res) {
   // Query Parameters: code
   doc.useServiceAccountAuth(creds, function () {
     doc.getRows(process.env.SHEET_HOUSEHOLDS, { "query": "id = " + req.params.id }, function (err, households) {
-      if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
+      if (err) {
+        res.json({ error: 'Invalid credentials.' });
+        return;
+      }
 
+      if (households[0] && req.query.code.toLowerCase() == households[0].code.toLowerCase()) {
         var invalidEntries = [];
 
         req.body.guests.map(function (guest) {
